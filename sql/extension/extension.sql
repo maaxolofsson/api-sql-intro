@@ -59,3 +59,7 @@ VALUES
 
 -- Using an SQL JOIN
 SELECT title, directors.name FROM films JOIN directors ON films.directorId = directors.id;
+
+-- Extension 3
+-- Get list of directors with the number of films they have directed.
+SELECT directors.name AS Director, COUNT(films.directorId) AS NumberOfMovies FROM films JOIN directors ON directors.id = films.directorId GROUP BY directors.name;
